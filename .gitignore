@@ -1,0 +1,10 @@
+#gitignore
+#Ignore these files
+/config.php
+
+#Ignore all files in these folders
+/_content/js/ckeditor/
+/_content/js/tinymce/
+/_content/js/flot/
+/ckfinder/
+/templates/books/

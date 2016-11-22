@@ -1,0 +1,52 @@
+h1.windows{
+	padding-bottom:5px;
+}
+div.windows{
+	position:relative;
+	top:200px;
+	left:350px;
+	min-width:450px;
+	margin-bottom:30px;
+	background:#D0F0C0;
+	border:1px solid #666;
+	-webkit-border-radius:15px;
+}
+div.windows input[type='text'], div.windows select{background:#E4F4DC;}
+div.handle{
+	height:5px;
+	margin-bottom:10px;
+	border-top:15px solid #b6d7a8;
+	border-bottom:1px solid #666;
+	-webkit-border-radius:15px 15px 0 0;
+	background:#b6d7a8;
+}
+a.windows_close{
+	position:relative;
+	top:-12px;
+	left:-3px;
+	display:block;
+	float:right;
+	margin:0px 5px 0 auto;
+	width:14px;
+	height:14px;
+	background-image:url(/_content/img/mac_close_passive.png);
+}
+form.windows_form{
+	padding:0 20px 20px 20px;
+}
+input.windows_button{
+  
+}
+input.windows_name{
+	width:250px;
+}
+select.windows_contragents{
+	margin:8px 0 0 0;
+	width:350px;
+}
+input.windows_date{
+	width:70px;
+}
+input.windows_search_string{
+	width:250px;
+}

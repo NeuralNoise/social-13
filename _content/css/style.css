@@ -1,0 +1,106 @@
+html{
+	width:100%;
+	height:100%;
+}
+
+body{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+div.post{
+	padding-top:10px;
+	padding-bottom:5px;
+	width:500px;
+	border:1px solid #CCC;
+}
+
+div.post_form{
+	margin-left:58px;
+	padding-top:10px;
+	border:0;
+	min-height:50px;
+}
+
+div.post_form:focus{
+	outline:none;
+}
+
+img.post_user_logo{
+	position:absolute;
+	display:block;
+	margin-left:10px;
+	width:38px;
+	height:38px;
+}
+
+div.post_photos_preview{
+	padding-top:10px;
+}
+
+div.post_foot{
+	margin-top:10px;
+	padding-top:5px;
+	border-top:1px solid #CCC;
+}
+
+div.post_buttons{
+	float:right;
+	margin-right:10px;
+}
+
+button.post_public{
+	border:0;
+	width:100px;
+	height:18px;
+	border-radius:3px;
+	background:#5470D9;
+	color:#FFF;
+	font-weight:bold;
+}
+
+button.post_public:active{
+	border:0;
+	background:#5456D9;
+}
+
+button.post_public:focus{
+	outline:none;
+}
+
+div.post_elements{
+	float:left;
+}
+
+div.photik{
+	position:relative;
+	margin-top:3px;
+	margin-left:10px;
+	width:17px;
+	height:14px;
+	background:url('/images/photik.png') no-repeat;
+	overflow:hidden;
+}
+
+div.photik:hover{
+	background:url('/images/photik_active.png') no-repeat;
+}
+
+
+input.photik{
+	position:absolute;
+	display:block;
+	width:17px;
+	height:14px;
+	opacity:0;
+	z-index:2;
+}
+
+
+div.clear{
+	clear:both;
+}

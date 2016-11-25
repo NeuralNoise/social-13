@@ -40,6 +40,33 @@ img.post_user_logo{
 
 div.post_photos_preview{
 	padding-top:10px;
+	margin-bottom:10px;
+}
+
+div.post_photo_preview{
+	float:left;
+	margin-left:10px;
+	width:100px;
+	height:100px;
+}
+
+div.post_preview_plusik{
+	float:left;
+	margin-left:10px;
+	border:2px dashed #DDDFE2;
+	width:96px;
+	height:96px;
+	background:url('/images/photo_plus.png') no-repeat center center;
+}
+
+div.post_preview_plusik:hover{
+	background:url('/images/photo_plus_hover.png') no-repeat center center;
+	cursor:pointer;
+}
+
+img.post_photo_preview{
+	width:96px;
+	height:96px;
 }
 
 div.post_foot{
@@ -98,6 +125,12 @@ input.photik{
 	height:14px;
 	opacity:0;
 	z-index:2;
+}
+
+input.photik_big{
+	width:100px;
+	height:100px;
+	cursor:pointer;
 }
 
 

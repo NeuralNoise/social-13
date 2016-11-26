@@ -22,8 +22,9 @@ div.post{
 div.post_form{
 	margin-left:58px;
 	padding-top:10px;
+	padding-bottom:30px;
 	border:0;
-	min-height:50px;
+	min-height:20px;
 }
 
 div.post_form:focus{
@@ -40,7 +41,6 @@ img.post_user_logo{
 
 div.post_photos_preview{
 	padding-top:10px;
-	margin-bottom:10px;
 }
 
 div.post_photo_preview{

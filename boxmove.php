@@ -6,14 +6,23 @@
 
 
 <script>
-var cols = document.querySelectorAll('#columns .column');
+initDrag();
 
-[].forEach.call(cols, function(col) {
-  col.addEventListener('dragstart', handleDragStart, false);
-  col.addEventListener('dragenter', handleDragEnter, false);
-  col.addEventListener('dragover', handleDragOver, false);
-  col.addEventListener('dragleave', handleDragLeave, false);
-});
+function initDrag(){
+	var cols = document.querySelectorAll('#columns .column');
+	var dragSrcEl = null;
+	var i;
+	i=1;
+	[].forEach.call(cols, function(col) {
+	  //alert(i);i++; 
+	  col.addEventListener('dragstart', handleDragStart, false);
+	  col.addEventListener('dragenter', handleDragEnter, false)
+	  col.addEventListener('dragover', handleDragOver, false);
+	  col.addEventListener('dragleave', handleDragLeave, false);
+	  col.addEventListener('drop', handleDrop, false);
+	  col.addEventListener('dragend', handleDragEnd, false);
+	});
+}
 
 function handleDragStart(e) {
   // Target (this) element is the source node.
@@ -24,10 +33,6 @@ function handleDragStart(e) {
   e.dataTransfer.effectAllowed = 'move';
   e.dataTransfer.setData('text/html', this.innerHTML);
 }
-
-[].forEach.call(cols, function(col) { 
-  col.addEventListener('dragstart', handleDragStart, false);
-});
 
 //Punktir border over{
 function handleDragOver(e) {
@@ -68,36 +73,13 @@ function handleDrop(e) {
   return false;
 }	
 
-function handleDragEnd(e) {
+function handleDragEnd(e){
   // this/e.target is the source node.
 
   [].forEach.call(cols, function (col) {
     col.classList.remove('over');
   });
 }
-
-[].forEach.call(cols, function(col) {
-  col.addEventListener('dragstart', handleDragStart, false);
-  col.addEventListener('dragenter', handleDragEnter, false)
-  col.addEventListener('dragover', handleDragOver, false);
-  col.addEventListener('dragleave', handleDragLeave, false);
-  col.addEventListener('drop', handleDrop, false);
-  col.addEventListener('dragend', handleDragEnd, false);
-});
-
-
-//Drag transfer{
-var dragSrcEl = null;
-
-
-
-
-
-//}
-
-
-
-
 </script>
 
 <style>

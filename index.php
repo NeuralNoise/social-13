@@ -6,16 +6,16 @@ require_once($_SERVER['DOCUMENT_ROOT']."/includes/db.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/includes/auth.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/includes/service.php");
 
-//Инициализируем сессию COOKIE
+//РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј СЃРµСЃСЃРёСЋ COOKIE
 block("init_session");
 
 //Include config
 require_once("./config.php");
 
-//Подключаемся к базе данных
+//РџРѕРґРєР»СЋС‡Р°РµРјСЃСЏ Рє Р±Р°Р·Рµ РґР°РЅРЅС‹С…
 db_connect();
 
-//Переход с index.php
+//РџРµСЂРµС…РѕРґ СЃ index.php
 $default_page="/social.php";
 
 if(isset($_SESSION['user'])){
@@ -24,21 +24,21 @@ if(isset($_SESSION['user'])){
 		unset($_SESSION['search_string']);
 		echo login_form();
 	}else{
-		//Если пользователь уже авторизован
+		//Р•СЃР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ СѓР¶Рµ Р°РІС‚РѕСЂРёР·РѕРІР°РЅ
 		header("location: $default_page");
 	}
 }elseif(@$_GET['action']=='login'){
-	//Или только авторизовыается
+	//РР»Рё С‚РѕР»СЊРєРѕ Р°РІС‚РѕСЂРёР·РѕРІС‹Р°РµС‚СЃСЏ
 	if(check_login()){
-		//И ввел верный логин и пароль
+		//Р РІРІРµР» РІРµСЂРЅС‹Р№ Р»РѕРіРёРЅ Рё РїР°СЂРѕР»СЊ
 		$_SESSION['user']=@$_POST['user'];
 		header("location: $default_page");
 	}else{
-		//Или они все таки неверны
-		echo login_form("<span style='color:red'>Ошибка в логине или пароле!</span><br/>");
+		//РР»Рё РѕРЅРё РІСЃРµ С‚Р°РєРё РЅРµРІРµСЂРЅС‹
+		echo login_form("<span style='color:red'>РћС€РёР±РєР° РІ Р»РѕРіРёРЅРµ РёР»Рё РїР°СЂРѕР»Рµ!</span><br/>");
 	}
 }else{
-	//Перебрасываем на форму входа в систему
+	//РџРµСЂРµР±СЂР°СЃС‹РІР°РµРј РЅР° С„РѕСЂРјСѓ РІС…РѕРґР° РІ СЃРёСЃС‚РµРјСѓ
 	//echo generate_hash("", "");
 	echo login_form();
 }

@@ -1,11 +1,11 @@
 <?
-//Генерирует хэш на основе логина и пароля
+//Р“РµРЅРµСЂРёСЂСѓРµС‚ С…СЌС€ РЅР° РѕСЃРЅРѕРІРµ Р»РѕРіРёРЅР° Рё РїР°СЂРѕР»СЏ
 function generate_hash($user, $password){
 	$hash=sha1(md5($user)."+++".$password);
 	return $hash;
 }
 
-//Проверяет, указаны ли верные данные для входа
+//РџСЂРѕРІРµСЂСЏРµС‚, СѓРєР°Р·Р°РЅС‹ Р»Рё РІРµСЂРЅС‹Рµ РґР°РЅРЅС‹Рµ РґР»СЏ РІС…РѕРґР°
 function check_login(){
 	$user=db_easy("SELECT `name`, `password_hash` FROM `users` WHERE `name`='".mysql_real_escape_string(@$_POST['user'])."'");
 	if(generate_hash($user['name'], @$_POST['password'])==$user['password_hash']){
@@ -15,24 +15,24 @@ function check_login(){
 	}
 }
 
-//Генерирует HTML формы входа
+//Р“РµРЅРµСЂРёСЂСѓРµС‚ HTML С„РѕСЂРјС‹ РІС…РѕРґР°
 function login_form($message=''){
 	$html.="";
 	$html.=template_get('header');
 	$html.="<div style='width:100%;height:100%' align='center'>";
 	$html.="<form action='/?action=login' method='post' style='margin-top:25%;width:300px;height:300px;'>";
-	$html.="Введите логин и пароль<br/>";
+	$html.="Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ Рё РїР°СЂРѕР»СЊ<br/>";
 	$html.=$message;
 	$html.="<input type='text' name='user'/><br/>";
 	$html.="<input type='password' name='password'/><br/>";
-	$html.="<input type='submit' value='Войти'/>";
+	$html.="<input type='submit' value='Р’РѕР№С‚Рё'/>";
 	$html.="</form>";
 	$html.="</div>";
 	$html.=template_get('footer');
 	return $html;
 }
 
-//Получает имя группы по имени пользователя
+//РџРѕР»СѓС‡Р°РµС‚ РёРјСЏ РіСЂСѓРїРїС‹ РїРѕ РёРјРµРЅРё РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 function get_user_group($name=""){
 	if($name=="") $name=$_SESSION['user'];
 	$group='';
@@ -41,7 +41,7 @@ function get_user_group($name=""){
 	return $group;
 }
 
-//Определяет принадлежность пользователя к группе
+//РћРїСЂРµРґРµР»СЏРµС‚ РїСЂРёРЅР°РґР»РµР¶РЅРѕСЃС‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ Рє РіСЂСѓРїРїРµ
 function check_group($group_check){
 	$group_current=get_user_group();
 	if($group_check==$group_current){
@@ -51,7 +51,7 @@ function check_group($group_check){
 	}
 }
 
-//Возвращает текущего пользователя в системе
+//Р’РѕР·РІСЂР°С‰Р°РµС‚ С‚РµРєСѓС‰РµРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІ СЃРёСЃС‚РµРјРµ
 function get_user(){
 	return $_SESSION['user'];
 }

@@ -69,11 +69,25 @@ img.post_photo_preview, .blackout{
 	width:96px;
 	height:96px;
 }
-.blackout{
+.blackout{ 
+	display:none;
 	position:absolute;
 	opacity:0.5;
 	z-index:100;
+	background:#000;
 }
+
+a.krestik{
+	margin:4px 4px auto auto;
+	width:12px;
+	height:12px;
+	background-image:url('/_content/img/icons.png');
+	background-position:-392px -220px;
+	background-repeat:no-repeat;
+	display:block; /*need only because this is tag A*/
+	z-index:200;
+}
+
 div.post_foot{
 	margin-top:10px;
 	padding-top:5px;
@@ -160,3 +174,5 @@ div.clear{
 }
 
 /*}*/
+
+
